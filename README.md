@@ -1,1 +1,0 @@
-# kid-campus-technical-test
