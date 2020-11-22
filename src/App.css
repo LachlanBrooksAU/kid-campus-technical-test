@@ -1,9 +1,127 @@
-.App {
+/* 
+STYLING CHANGES MADE FROM MOCKUP
+- Rounded some div and spacing sizes (eg. 399px to 400px)
+- Enforced a maximum width to the pizza shop items due to stretching to edges on larger display would look unsightly
+- Adjusted line heights
+
+STYLES LAID OUT FROM TOP TO BOTTOM OF PAGE
+
+Thanks for the opportunity :)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap');
+
+@media screen and (max-width: 478px) {
+  h1 {
+    font-size: 48px !important;
+  }
+  h3 {
+    font-size: 18px !important;
+  }
+}
+
+html {
   text-align: center;
+  font-family: OpenSans;
+  line-height: 1;
+}
+
+body {
+  background: #E5E5E5;
 }
 
 .Header {
   width: 100%;
   height: 400px;
   background: #8490fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-size: 72px;
+  font-weight: 600;
+}
+
+.location-search-input {
+  width: 90vw;
+  border: 0px;
+  padding: 0px;
+  max-width: 788px;
+  height: 64px;
+  text-align: center;
+  font-size: 24px;
+  color: A0A0A0;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.location-search-input:focus {
+  outline-width: 0;
+}
+
+.location-search-input::placeholder {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: A0A0A0;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.SearchButton {
+  max-width: 788px;
+  width: 90vw;
+  height: 64px;
+  background-color: #FF7272;
+  border: 0px;
+  border-radius: 0px 0px 5px 5px;
+  color: white;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+
+.SearchButton:hover {
+  cursor: pointer;
+}
+
+.Results {
+  background: #E5E5E5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.PizzaShop {
+  background-color: white;
+  padding: 12px;
+  margin: 0px 0px 48px 0px;
+  width: 90vw;
+  max-width: 1280px;
+}
+
+.PizzaDetails {
+  padding: 12px;
+  float: left;
+}
+
+.PizzaOffers {
+  padding: 12px;
+  float: right;
+}
+
+h3 {
+
+}
+
+h4 {
+
 }
