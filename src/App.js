@@ -18,9 +18,7 @@ function App() {
         <div className="HeaderContainer">
           <h1>Pizza Finder</h1>
           <LocationInput name="suburb" placeholder="Suburb" address={address} setAddress={setAddress} setLatLng={setLatLng} latLng={latLng} />
-          <button className="SearchButton">Search</button>
-          <button onClick={() => setShops(GetPizzaShops({latLng}))}>Set</button>
-          <button onClick={() => console.log(latLng)}>Print</button>
+          <button onClick={() => setShops(GetPizzaShops({latLng}))} className="SearchButton">Search</button>
         </div>
       </div>
       <h2>Showing Results for {address}</h2>

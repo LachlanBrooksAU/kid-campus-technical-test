@@ -13,7 +13,7 @@ function conductSearch({userLocation}) {
     aroundLatLng: userLocation,
   })
   .then(({hits}) => {
-    return 10;
+    return hits;
   });
 }
 
@@ -22,8 +22,8 @@ export default function GetPizzaShops({ latLng }) {
   var lng = latLng.lng.toString();
   var userLocation = lat.concat(', ', lng);
   
-  var returnshops = conductSearch({userLocation});
+  const shops = conductSearch({userLocation});
 
-  console.log(returnshops)
-  return returnshops
+  console.log(shops)
+  return shops
 }
