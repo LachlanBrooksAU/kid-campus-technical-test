@@ -66,14 +66,18 @@ h1 {
 
 .AutocompletePlaces {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f1f1f1;
   cursor: pointer;
-  line-height: 50px;
-  width: 788px;
+  padding: 0 6px;
+  line-height: 25px;
+  width: 90vw;
   min-height: 50px;
   font-size: 24px;
   font-weight: 700;
-  max-width: 788px !important;
+  max-width: 776px !important;
 }
 
 .SearchButton {
@@ -176,7 +180,8 @@ p {
     text-align: center;
   }
 
-  .PlacesAutocomplete {
-    max-width: 90vw !important;
+  .AutocompletePlaces {
+    padding: 0 2.5vw;
+    width: 85vw;
   }
 }
