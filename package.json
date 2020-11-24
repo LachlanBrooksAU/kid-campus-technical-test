@@ -1,7 +1,7 @@
 {
   "homepage": "https://lachlanbrooksau.github.io/kid-campus-technical-test/",
   "name": "kid-campus-tech-test",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
