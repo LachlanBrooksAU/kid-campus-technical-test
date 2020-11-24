@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kid-campus-technical-test/static/css/main.affd2a6e.chunk.css",
+    "main.css": "/kid-campus-technical-test/static/css/main.4e476b9c.chunk.css",
     "main.js": "/kid-campus-technical-test/static/js/main.2585813e.chunk.js",
     "main.js.map": "/kid-campus-technical-test/static/js/main.2585813e.chunk.js.map",
     "runtime-main.js": "/kid-campus-technical-test/static/js/runtime-main.759fae32.js",
@@ -10,13 +10,13 @@
     "static/js/3.4bcab456.chunk.js": "/kid-campus-technical-test/static/js/3.4bcab456.chunk.js",
     "static/js/3.4bcab456.chunk.js.map": "/kid-campus-technical-test/static/js/3.4bcab456.chunk.js.map",
     "index.html": "/kid-campus-technical-test/index.html",
-    "static/css/main.affd2a6e.chunk.css.map": "/kid-campus-technical-test/static/css/main.affd2a6e.chunk.css.map",
+    "static/css/main.4e476b9c.chunk.css.map": "/kid-campus-technical-test/static/css/main.4e476b9c.chunk.css.map",
     "static/js/2.2f155c06.chunk.js.LICENSE.txt": "/kid-campus-technical-test/static/js/2.2f155c06.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.759fae32.js",
     "static/js/2.2f155c06.chunk.js",
-    "static/css/main.affd2a6e.chunk.css",
+    "static/css/main.4e476b9c.chunk.css",
     "static/js/main.2585813e.chunk.js"
   ]
 }
