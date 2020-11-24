@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
-import "./App.css";
+import "../App.css";
 
-export default function LocationInput({ address, setAddress, setLatLng }) {
+export default function LocationInput({ setLatLng, setSelectedAddress }) {
+    // Store address to be recieved from user
+    const [address, setAddress] = useState('');
+  
   function handleChange(address) {
     setAddress(address);
   }
 
+  // When user selects an address, set
   function handleSelect(address) {
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
@@ -18,6 +22,12 @@ export default function LocationInput({ address, setAddress, setLatLng }) {
       })
       .catch((error) => console.error("Error", error));
     setAddress(address);
+    setSelectedAddress(address);
+  }
+
+  // Set search type to regions (allows postcode and suburb but not address)
+  const searchOptions = {
+    types: ["(regions)"]
   }
 
   return (
@@ -25,31 +35,28 @@ export default function LocationInput({ address, setAddress, setLatLng }) {
       value={address}
       onChange={handleChange}
       onSelect={handleSelect}
+      searchOptions={searchOptions}
     >
-      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+      {({ getInputProps, getSuggestionItemProps, suggestions }) => (
         <div>
-          <input
+          <input 
             {...getInputProps({
               placeholder: "Enter suburb or postcode",
-              className: "location-search-input",
+              className: "LocationInput",
             })}
           />
-          <div className='autocomplete-dropdown-container'>
-            {loading && <div>Loading...</div>}
+          <div className='AutocompleteContainer'>
+            {/* Show google maps autocomplete suggestions */}
             {suggestions.map((suggestion) => {
-              const className = suggestion.active
-                ? "suggestion-item--active"
-                : "suggestion-item";
-              const style = suggestion.active
-                ? { backgroundColor: "#f1f1f1", height: "50px", cursor: "pointer", fontSize: "24px"}
-                : { backgroundColor: "#ffffff", height: "50px", cursor: "pointer", fontSize: "24px"};
               return (
                 <div
+                  className='AutocompletePlaces'
                   key={suggestion.placeId}
-                  {...getSuggestionItemProps(suggestion, { className, style,
-                  })}
+                  {...getSuggestionItemProps(suggestion)}
                 >
-                  <span>{suggestion.description}</span>
+                  <span>
+                    {suggestion.description}
+                  </span>
                 </div>
               );
             })}

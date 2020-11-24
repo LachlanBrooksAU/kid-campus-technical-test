@@ -1,25 +1,7 @@
-/* 
-STYLING CHANGES MADE FROM MOCKUP
-- Rounded some div and spacing sizes (eg. 399px to 400px)
-- Enforced a maximum width to the pizza shop items due to stretching to edges on larger display would look unsightly
-- Adjusted line heights
 
-STYLES LAID OUT FROM TOP TO BOTTOM OF PAGE
 
-Thanks for the opportunity :)
-*/
-
+/* Import Open Sans Font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap');
-
-@media screen and (max-width: 478px) {
-  h1 {
-    font-size: 48px !important;
-  }
-  h3 {
-    font-size: 18px !important;
-  }
-
-}
 
 html {
   text-align: center;
@@ -31,8 +13,10 @@ body {
   background: #E5E5E5;
 }
 
+/* Header */
+
 .Header {
-  width: 100%;
+  width: 100vw;
   min-height: 400px;
   background: #8490fe;
   display: flex;
@@ -45,15 +29,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
 }
 
 h1 {
+  margin-bottom: 48px;
   color: white;
   font-size: 72px;
   font-weight: 600;
 }
 
-.location-search-input {
+.LocationInput {
   width: 90vw;
   border: 0px;
   padding: 0px;
@@ -62,22 +48,33 @@ h1 {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
-  color: A0A0A0;
+  color: black;
   border-radius: 5px 5px 0px 0px;
 }
 
-input:focus {
-  outline-width: 0;
+.LocationInput:focus {
+  outline: none;
 }
 
-.location-search-input::placeholder {
+.LocationInput::placeholder {
   font-size: 24px;
   text-align: center;
   font-weight: 700;
-  color: A0A0A0;
+  color: #A0A0A0;
   border-radius: 5px 5px 0px 0px;
 }
 
+.AutocompletePlaces {
+  position: relative;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  line-height: 50px;
+  width: 788px;
+  min-height: 50px;
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 788px !important;
+}
 
 .SearchButton {
   max-width: 788px;
@@ -91,31 +88,47 @@ input:focus {
   font-weight: 800;
 }
 
-
 .SearchButton:hover {
   cursor: pointer;
 }
 
+/* Results */
+
+.ResultsSection {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
 .Results {
+  width: 100%;
   background: #E5E5E5;
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 1280px;
 }
 
 .PizzaShop {
   display: flex;
-  flex-direction: column;
   background-color: white;
   padding: 12px;
-  margin: 0px 0px 48px 0px;
-  width: 90vw;
-  max-width: 1280px;
+  margin: 12px 32px 32px 32px; 
+  width: 80vw;
+  max-width: 100% !important;
+  justify-content: space-between;
 }
 
 .PizzaDetails {
   padding: 12px;
   float: left;
+  text-align: left;
+  
 }
 
 .PizzaOffers {
@@ -124,15 +137,46 @@ input:focus {
 }
 
 h3 {
+  margin: 0;
   font-weight: 700;
   font-size: 36px;
 }
 
 h4 {
+  margin: 0;
   font-weight: 700;
   font-size: 24px;
 }
 
 p {
   font-weight: 600;
+  font-size: 18px;
+}
+
+/* When on a viewport 478px wide (a portrait smartphone), 
+    - Reduce font size
+    - Arrange Pizza Shops vertically
+    - Ensure autocomplete suggestions don't exceed defined limits
+ */
+@media screen and (max-width: 478px) {
+  h1 {
+    font-size: 48px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  .PizzaShop {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .PizzaDetails {
+    text-align: center;
+  }
+
+  .PlacesAutocomplete {
+    max-width: 90vw !important;
+  }
 }
